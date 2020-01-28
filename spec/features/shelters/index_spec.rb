@@ -1,7 +1,3 @@
-# As a visitor
-# When I visit '/shelters'
-# Then I see the name of each shelter in the system
-
 require 'rails_helper'
 
 describe "shelter index page" do
