@@ -16,9 +16,8 @@
     fill_in :zip, with: 20938
     click_on "Create New Shelter"
 
-    # Expect to be redirected to /shelters and display flash message
+    # Expect to be redirected to /shelters
     expect(current_path).to eq('/shelters')
-    expect(page).to have_content("Barkin' Doggos Was Successfully Created!")
 
     # Checking that the shelter created above was actually created
     new_shelter = Shelter.last
