@@ -7,8 +7,17 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
+  <div class="topnav">
+    <a class="active" href="/">Home  </a>
+    <a href="/shelters">Shelters</a>
+    <a href="/pets">Pets</a>
+  </div>
   <body>
-    <%= yield %>
+    <center>
+    <% flash.each do |type, message| %>
+      <p><%= message %></p>
+    <% end %>
+    </center>
+      <%= yield %>
   </body>
 </html>
