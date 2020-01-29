@@ -28,7 +28,7 @@ describe "Shelter pets index" do
     visit "/shelters/#{@howlin_puppers.id}/pets"
   end
 
-  xit "shows each pet that belongs to that shelter along with all pet info" do
+  it "shows each pet that belongs to that shelter along with all pet info" do
     within "#pet-#{@artemis.id}" do
       expect(page).to have_css("img[src*='#{@artemis.image}']")
       expect(page).to have_content("Name: #{@artemis.name}")
@@ -45,7 +45,7 @@ describe "Shelter pets index" do
       expect(page).to have_content("Current Shelter: #{@rue.shelter.name}")
     end
 
-    expect(page).to_not have_content()
-
+    expect(page).to_not have_content("#{@tycho.name}")
+    expect(page).to_not have_content("#{@cody.name}")
   end
 end

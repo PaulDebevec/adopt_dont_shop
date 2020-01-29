@@ -1,15 +1,18 @@
 <center>
-<h1>All Pets</h1>
-
-<% @pets.each do |pet| %>
-  <section class = "pets">
-    <section id= 'pet-<%=pet.id%>'>
-      <img src= <%= pet.image %>>
-      <p>Name: <%= pet.name %></p>
-      <p>Age: <%= pet.approximate_age %></p>
-      <p>Sex: <%= pet.sex %></p>
-      <p>Current Shelter: <%= pet.shelter.name %></p>
+  <% if @shelter %>
+    <h1>All Pets at <%= @shelter.name %></h1>
+  <% else %>
+    <h1>All Pets</h1>
+  <% end %>
+  <% @pets.each do |pet| %>
+    <section class = "pets">
+      <section id= 'pet-<%=pet.id%>'>
+        <img src= <%= pet.image %>>
+        <p>Name: <%= pet.name %></p>
+        <p>Age: <%= pet.approximate_age %></p>
+        <p>Sex: <%= pet.sex %></p>
+        <p>Current Shelter: <%= pet.shelter.name %></p>
+      </section>
     </section>
-  </section>
-<% end %>
+  <% end %>
 </center>
