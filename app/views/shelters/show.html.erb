@@ -1,9 +1,9 @@
 <center>
-<h1> <%= @shelter.name %> </h1>
-<p><%= @shelter.address %></p>
-<p><%= @shelter.city %></p>
-<p><%= @shelter.state %></p>
-<p><%= @shelter.zip %></p>
-<p><%= link_to "Update #{@shelter.name}", "/shelters/#{@shelter.id}/edit" %></p>
-<p><%= link_to "Delete #{@shelter.name}", "/shelters/#{@shelter.id}", method: :delete %></p>
+  <h1> <%= @shelter.name %> </h1>
+  <p><%= @shelter.address %></p>
+  <p><%= @shelter.city %></p>
+  <p><%= @shelter.state %></p>
+  <p><%= @shelter.zip %></p>
+  <p><%= link_to "Update #{@shelter.name}", "/shelters/#{@shelter.id}/edit" %></p>
+  <p><%= link_to "Delete #{@shelter.name}", "/shelters/#{@shelter.id}", method: :delete %></p>
 </center>
