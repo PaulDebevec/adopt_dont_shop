@@ -8,10 +8,10 @@
     <section class = "pets">
       <section id= 'pet-<%=pet.id%>'>
         <img src= <%= pet.image %>>
-        <p>Name: <%= pet.name %></p>
+        <p>Name: <%= link_to pet.name, "/pets/#{pet.id}" %></p>
         <p>Age: <%= pet.approximate_age %></p>
         <p>Sex: <%= pet.sex %></p>
-        <p>Current Shelter: <%= pet.shelter.name %></p>
+        <p>Current Shelter: <%= link_to pet.shelter.name, "/shelters/#{pet.shelter.id}" %></p>
         <p> <%= link_to "Edit #{pet.name}", "/pets/#{pet.id}/edit" %> </p>
         <p> <%= link_to "Delete Pet Profile", "/pets/#{pet.id}", method: :delete %> </p><br/><br/>
       </section>
