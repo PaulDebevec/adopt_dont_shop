@@ -20,7 +20,7 @@ describe "Delete pet" do
 
       @tycho = @fantastic_friends.pets.create(image: "https://www.rover.com/blog/wp-content/uploads/2019/05/pupper-featured.png",
         name: 'Tycho',
-        approximate_age: 3,
+        approximate_age: 7,
         description: "I'm somewhat of a troublemaker",
         sex: 'Male')
     end
@@ -35,6 +35,19 @@ describe "Delete pet" do
       expect(page).to_not have_css("img[src*='#{@rue.image}']")
       expect(page).to_not have_content("#{@rue.name}")
       expect(page).to_not have_content("#{@rue.approximate_age}")
+    end
+
+    it "Pet index page shows delete link under each pet displayed" do
+      visit '/pets'
+
+      within "#pet-#{@tycho.id}" do
+        click_link "Delete Pet Profile"
+      end
+
+      expect(current_path).to eq("/pets")
+      expect(page).to_not have_css("img[src*='#{@tycho.image}']")
+      expect(page).to_not have_content("#{@tycho.name}")
+      expect(page).to_not have_content("#{@tycho.approximate_age}")
     end
   end
 end
