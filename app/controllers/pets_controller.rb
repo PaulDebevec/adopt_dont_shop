@@ -7,4 +7,8 @@ class PetsController < ApplicationController
       @pets = Pet.all
     end
   end
+
+  def show
+    @pet = Pet.find(params[:pet_id])
+  end
 end
