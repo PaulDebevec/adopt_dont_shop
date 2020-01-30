@@ -1,10 +1,26 @@
 
 # Shelters
-boulder_rescue = Shelter.create(name: "Boulder Rescue", address: "2712 Slobbery Circle", city: "Boulder", state: "CO", zip: 80205)
-howlin_puppers = Shelter.create(name: "Howlin' Puppers", address: "7943 Puppers Drive", city: "Colorado Springs", state: "CO", zip: 80207)
-fantastic_puppers = Shelter.create(name: "Fantastic Puppers", address: "9872 Furry Lane", city: "New York City", state: "NY", zip: 10001)
+mike = Shelter.create(name: "Mike's Shelter", address: "1331 17th Street", city: "Denver", state: "CO", zip: "80202")
+meg = Shelter.create(name: "Meg's Shelter", address: "150 Main Street", city: "Hershey", state: "PA", zip: "17033")
+boulder_rescue = Shelter.create(name: "Boulder Rescue", address: "2712 Slobbery Circle", city: "Boulder", state: "CO", zip: "80205")
+howlin_puppers = Shelter.create(name: "Howlin' Puppers", address: "7943 Puppers Drive", city: "Colorado Springs", state: "CO", zip: "80207")
+fantastic_puppers = Shelter.create(name: "Fantastic Puppers", address: "9872 Furry Lane", city: "New York City", state: "NY", zip: "10001")
 
 # Pets
+mike.pets.create(image: "https://steemitimages.com/DQmZyHkjuh4NLQLMAzTXVyz7CPTmtarfXm673bXQphJqoii/22-24_tn.jpg",
+                name: 'Athena',
+                approximate_age: 1,
+                description: "Butthead",
+                sex: 'Female',
+                adoptable?: true)
+
+meg.pets.create(image: "https://steemitimages.com/DQmZyHkjuh4NLQLMAzTXVyz7CPTmtarfXm673bXQphJqoii/22-24_tn.jpg",
+                name: 'Odell',
+                approximate_age: 4,
+                description: "good dog",
+                sex: 'Male',
+                adoptable?: true)
+
 howlin_puppers.pets.create(image: "https://steemitimages.com/DQmZyHkjuh4NLQLMAzTXVyz7CPTmtarfXm673bXQphJqoii/22-24_tn.jpg",
                           name: 'Rue',
                           approximate_age: 1,
