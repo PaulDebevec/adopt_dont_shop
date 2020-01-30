@@ -1,22 +1,10 @@
-# User Story 9, Pet Show
-#
-# As a visitor
-# When I visit '/pets/:id'
-# Then I see the pet with that id including the pet's:
-# - image
-# - name
-# - description
-# - approximate age
-# - sex
-# - adoptable/pending adoption status
-
 require 'rails_helper'
 
 describe "As a visitor" do
   describe "When I visit a pets show page" do
     before(:each) do
-      @howlin_puppers = Shelter.create(name: "Howlin' Puppers", address: "7943 Puppers Drive", city: "Colorado Springs", state: "CO", zip: 80207)
-      @fantastic_friends = Shelter.create(name: "Fantastic friends", address: "9872 Friendly Lane", city: "New York City", state: "NY", zip: 10001)
+      @howlin_puppers = Shelter.create(name: "Howlin' Puppers", address: "7943 Puppers Drive", city: "Colorado Springs", state: "CO", zip: "80207")
+      @fantastic_friends = Shelter.create(name: "Fantastic friends", address: "9872 Friendly Lane", city: "New York City", state: "NY", zip: "10001")
 
       @artemis = @howlin_puppers.pets.create!(image: "https://cdn.steemitimages.com/DQmUbxeLd9sLL3gCL8L8vtucbEdmEG5CCDQqTNLa2hZbsrW/IMG_20180611_200246_283.jpg",
         name: 'Artemis',

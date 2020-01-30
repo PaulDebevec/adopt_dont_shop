@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe "Shelter pets index" do
   before(:each) do
-    @howlin_puppers = Shelter.create(name: "Howlin' Puppers", address: "7943 Puppers Drive", city: "Colorado Springs", state: "CO", zip: 80207)
-    @fantastic_friends = Shelter.create(name: "Fantastic friends", address: "9872 Friendly Lane", city: "New York City", state: "NY", zip: 10001)
+    @howlin_puppers = Shelter.create(name: "Howlin' Puppers", address: "7943 Puppers Drive", city: "Colorado Springs", state: "CO", zip: "80207")
+    @fantastic_friends = Shelter.create(name: "Fantastic friends", address: "9872 Friendly Lane", city: "New York City", state: "NY", zip: "10001")
 
     @rue = @howlin_puppers.pets.create(image: "https://steemitimages.com/DQmZyHkjuh4NLQLMAzTXVyz7CPTmtarfXm673bXQphJqoii/22-24_tn.jpg",
       name: 'Rue',
@@ -47,5 +47,11 @@ describe "Shelter pets index" do
 
     expect(page).to_not have_content("#{@tycho.name}")
     expect(page).to_not have_content("#{@cody.name}")
+  end
+
+  it "shows a count of the number of pets at that shelter" do
+    within "#pet-count" do
+      expect(page).to have_content("There Are Currently 2 Pets At #{@howlin_puppers.name}")
+    end
   end
 end
