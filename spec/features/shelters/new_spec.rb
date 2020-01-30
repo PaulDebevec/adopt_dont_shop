@@ -13,7 +13,7 @@
     fill_in :address, with: "5112 Barkin Plaza"
     fill_in :city, with: "Hollywood"
     fill_in :state, with: "CA"
-    fill_in :zip, with: 20938
+    fill_in :zip, with: "20938"
     click_on "Create New Shelter"
 
     # Expect to be redirected to /shelters
@@ -32,6 +32,6 @@
     expect(page).to have_content("5112 Barkin Plaza")
     expect(page).to have_content("Hollywood")
     expect(page).to have_content("CA")
-    expect(page).to have_content(20938)
+    expect(page).to have_content("20938")
   end
 end
