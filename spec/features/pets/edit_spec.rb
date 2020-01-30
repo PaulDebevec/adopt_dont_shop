@@ -13,12 +13,12 @@ describe "Pet edit page" do
 
     it "I see an 'Edit Pet' button and when I click it I am taken to a form to edit the pet" do
       visit "/pets/#{@rue.id}"
-      click_button "Edit Pet"
+      click_link "Edit #{@rue.name}"
 
       expect(current_path).to eq("/pets/#{@rue.id}/edit")
 
       fill_in :name, with: 'Rwo Chains'
-      click_button "Save Changes"
+      click_button "Save"
 
       expect(current_path).to eq("/pets/#{@rue.id}")
       expect(page).to have_content("Rwo Chains")

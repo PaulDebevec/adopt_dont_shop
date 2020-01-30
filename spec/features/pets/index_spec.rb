@@ -9,21 +9,25 @@ RSpec.describe "pets index page" do
       @rue = @howlin_puppers.pets.create(image: "https://steemitimages.com/DQmZyHkjuh4NLQLMAzTXVyz7CPTmtarfXm673bXQphJqoii/22-24_tn.jpg",
         name: 'Rue',
         approximate_age: 1,
+        description: "I'm sometimes a gargoyle",
         sex: 'Female')
 
       @artemis = @howlin_puppers.pets.create(image: "https://cdn.steemitimages.com/DQmUbxeLd9sLL3gCL8L8vtucbEdmEG5CCDQqTNLa2hZbsrW/IMG_20180611_200246_283.jpg",
         name: 'Artemis',
         approximate_age: 3,
+        description: "People say I'm a dream",
         sex: 'Female')
 
       @tycho = @fantastic_friends.pets.create(image: "https://www.rover.com/blog/wp-content/uploads/2019/05/pupper-featured.png",
         name: 'Tycho',
         approximate_age: 3,
+        description: "I'm somewhat of a troublemaker",
         sex: 'Male')
 
       @cody = @fantastic_friends.pets.create!(image: "https://images2.minutemediacdn.com/image/upload/c_crop,h_2716,w_4827,x_0,y_314/f_auto,q_auto,w_1100/v1554924989/shape/mentalfloss/istock-627892528.jpg",
         name: 'Cody',
         approximate_age: 2,
+        description: "I'm the best of boys",
         sex: 'Male')
 
       visit '/pets'
