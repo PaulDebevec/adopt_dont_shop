@@ -16,3 +16,7 @@
     </section>
   <% end %>
 </center>
+
+<% if @shelter %>
+  <%= link_to 'Create New Pet', "/shelters/#{@shelter.id}/pets/new" %>
+<% end %>
