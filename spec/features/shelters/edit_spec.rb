@@ -29,5 +29,29 @@ describe "Shelter edit page" do
       expect(page).to have_content("CO")
       expect(page).to have_content("80205")
     end
+
+    it "shows the 'Update Shelter' link under every shelter at '/shelters'" do
+      visit '/shelters'
+
+      within "#shelter-#{@howlin_puppers.id}" do
+        click_link "Update #{@howlin_puppers.name}"
+      end
+
+      expect(current_path).to eq("/shelters/#{@howlin_puppers.id}/edit")
+
+      fill_in :name, with: "Puppers R Us"
+      fill_in :address, with: "3482 Pupper Road"
+      fill_in :city, with: "Fort Collins"
+      fill_in :state, with: "CO"
+      fill_in :zip, with: "85042"
+      click_button "Save Changes"
+
+      expect(current_path).to eq("/shelters/#{@howlin_puppers.id}")
+      expect(page).to have_content("Puppers R Us")
+      expect(page).to have_content("3482 Pupper Road")
+      expect(page).to have_content("Fort Collins")
+      expect(page).to have_content("CO")
+      expect(page).to have_content("85042")
+    end
   end
 end
