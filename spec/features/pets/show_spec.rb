@@ -36,17 +36,20 @@ describe "As a visitor" do
     it "I see all of that pets information including their adoption status and description" do
       visit "/pets/#{@artemis.id}"
       expect(page).to have_css("img[src*='#{@artemis.image}']")
-      expect(page).to have_content("Name: #{@artemis.name}")
-      expect(page).to have_content("Age: #{@artemis.approximate_age}")
+      expect(page).to have_content("#{@artemis.name}")
+      expect(page).to have_content("Aproximate Age: #{@artemis.approximate_age}")
       expect(page).to have_content("Sex: #{@artemis.sex}")
-      expect(page).to have_content("Sex: #{@artemis.description}")
+      expect(page).to have_content("Description: #{@artemis.description}")
+      expect(page).to have_content("Adoption Status: Pending")
 
       visit "/pets/#{@tycho.id}"
       expect(page).to have_css("img[src*='#{@tycho.image}']")
-      expect(page).to have_content("Name: #{@tycho.name}")
-      expect(page).to have_content("Age: #{@tycho.approximate_age}")
+      expect(page).to have_content("#{@tycho.name}")
+      expect(page).to have_content("Aproximate Age: #{@tycho.approximate_age}")
       expect(page).to have_content("Sex: #{@tycho.sex}")
-      expect(page).to have_content("Sex: #{@tycho.description}")
+      expect(page).to have_content("Description: #{@tycho.description}")
+      expect(page).to have_content("Adoption Status: Adoptable")
+
     end
   end
 end
