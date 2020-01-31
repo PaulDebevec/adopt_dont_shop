@@ -18,7 +18,7 @@ class PetsController < ApplicationController
 
   def create
     shelter = Shelter.find(params[:shelter_id])
-    pet = Pet.new(pet_params.merge(shelter_id: shelter.id))
+    pet = shelter.pets.new(pet_params)
     pet.save
     redirect_to "/shelters/#{shelter.id}/pets"
   end
