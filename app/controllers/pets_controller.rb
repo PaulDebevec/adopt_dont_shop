@@ -1,11 +1,6 @@
 class PetsController < ApplicationController
   def index
-    if params[:shelter_id]
-      @shelter = Shelter.find(params[:shelter_id])
-      @pets = @shelter.pets.adoptable_pet_sort
-    else
-      @pets = Pet.all.adoptable_pet_sort
-    end
+    @pets = Pet.all.adoptable_pet_sort
   end
 
   def show
